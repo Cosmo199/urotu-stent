@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/splash_bg_secon"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/kidney_3"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/app_icon"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_below="@id/app_icon"
+            android:id="@+id/text_login"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="UrotuStent"
+            android:textColor="@color/dark"
+            android:textSize="30dp" />
+
+        <LinearLayout
+            android:id="@+id/login_layout"
+            android:background="@drawable/login_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_login"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:padding="20dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เข้าสู่ระบบ"
+                android:textColor="@color/textVeryDark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน"
+                android:textSize="15dp" />
+
+            <!-- Username Label -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="ชื่อผู้ใช้ *" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_username"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:textColor="@color/dark"
+                android:text="id-tester"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="รหัสผ่าน *" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_password"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:textColor="@color/dark"
+                android:text="1234"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/side_button"
+                android:text="เข้าสู่ระบบ"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_policy"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:textColor="@color/dark"
+            android:layout_below="@id/login_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="นโยบายความเป็นส่วนตัว" />
+
+    </RelativeLayout>
+
+</ScrollView>

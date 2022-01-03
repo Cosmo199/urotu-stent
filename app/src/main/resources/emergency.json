@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "name_department": "โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ",
+      "line": "-",
+      "contact_number": "029269999",
+      "lat_location": "10.00",
+      "long_location": "10.00",
+      "image": "https://upload.wikimedia.org/wikipedia/th/b/b5/TUHospital.jpeg"
+    },
+    {
+      "name_department": "แผนกศัลยกรรมทางเดินปัสสาวะ ",
+      "line": "Line: @thammasat_hospital",
+      "contact_number": "0292697845",
+      "lat_location": "10.00",
+      "long_location": "10.00",
+      "image": "https://upload.wikimedia.org/wikipedia/th/b/b5/TUHospital.jpeg"
+    }
+  ]
+}
+
+
+
