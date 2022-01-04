@@ -146,7 +146,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
             moveTaskToBack(true);
             exitProcess(-1)
-           // doubleBackToExitPressedOnce = false
         }, 1000)
     }
 
