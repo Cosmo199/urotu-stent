@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/side_button_draft"
+        android:background="@color/colorPrimary"
         android:text="คำอธิบายการแจ้งเตือน"
         android:textColor="@color/white"
         android:textStyle="bold" />

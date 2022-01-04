@@ -1,5 +1,4 @@
 package com.example.medicomgmester
-
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -17,7 +16,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.medicomgmester.databinding.ActivityMenuBinding
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.nav_header_menu.*
-
 
 class MenuActivity : AppCompatActivity() {
 

@@ -29,7 +29,7 @@
 
         <LinearLayout
             android:id="@+id/login_layout"
-            android:background="@drawable/login_nav_bar"
+            android:background="@drawable/login_bg_edit_tex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_login"
