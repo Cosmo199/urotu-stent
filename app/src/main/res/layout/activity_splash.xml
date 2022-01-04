@@ -13,12 +13,22 @@
         android:src="@drawable/kidney_3" />
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="UrotuStent"
-        android:textColor="@color/darkGrey"
+        android:textColor="@color/white"
         android:textSize="30dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="--version 1.0--"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         android:textStyle="normal" />
 
 

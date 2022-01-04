@@ -16,10 +16,6 @@
             android:title="@string/menu_gallery" />
 
         <item
-            android:id="@+id/nav_article"
-            android:title="@string/menu_article" />
-
-        <item
             android:id="@+id/nav_profile"
             android:title="@string/menu_profile" />
 

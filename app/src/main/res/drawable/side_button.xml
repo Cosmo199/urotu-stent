@@ -2,9 +2,8 @@
     android:shape="rectangle">
     <gradient
         android:angle="135"
-        android:centerColor="#2196F3"
-        android:endColor="#8CBCE3"
-        android:startColor="#0F7AE6"
+        android:endColor="#EA5789"
+        android:startColor="#EA5789"
         android:type="linear"/>
 
     <!--border radius in dp-->
