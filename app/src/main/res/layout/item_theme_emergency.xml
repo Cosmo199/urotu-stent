@@ -23,7 +23,7 @@
             android:layout_marginStart="23dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/name_emergency"
