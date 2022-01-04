@@ -66,7 +66,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="5dip"
                 android:textColor="@color/dark"
-                android:text="id-tester"
+                android:text="nawa"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
                 android:padding="10dp"

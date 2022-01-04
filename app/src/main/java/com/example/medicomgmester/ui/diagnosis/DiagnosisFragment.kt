@@ -66,10 +66,10 @@ class DiagnosisFragment : Fragment() {
                 detail_diagnosis_1.text = list?.results?.get(0)?.detail_diagnosis
                 var i: String? = list?.results?.get(0)?.kidney_type
                 if (i.equals("1")) {
-                    image_view_kidney.load("https://urotustent.com/Content/Image/kidney_1.png")
+                    image_view_kidney.load("https://urotustent.com/Content/Image/kidney_2.png")
                     name_diagnosis_2.text = "ตำแหน่งที่ต้องใส่สาย: ข้างซ้าย"
                 } else if (i.equals("2")) {
-                    image_view_kidney.load("https://urotustent.com/Content/Image/kidney_2.png")
+                    image_view_kidney.load("https://urotustent.com/Content/Image/kidney_1.png")
                     name_diagnosis_2.text = "ตำแหน่งที่ต้องใส่สาย: ข้างขวา"
                 } else {
                     image_view_kidney.load("https://urotustent.com/Content/Image/kidney_3.png")

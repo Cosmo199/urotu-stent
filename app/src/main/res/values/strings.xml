@@ -34,6 +34,8 @@
     <string name="menu_profile" translatable="false">ข้อมูลส่วนตัว</string>
     <string name="menu_questionnaire" translatable="false">แบบสอบถาม</string>
     <string name="menu_slideshow" translatable="false">อื่นๆ</string>
+    <string name="menu_chat" translatable="false">แชท</string>
+    <string name="menu_phone" translatable="false">เบอร์ติดต่อ</string>
 
     <!-- Detail activity-->
     <string name="doc_detail" translatable="false">Within the field of literary criticism, "text" also refers to the

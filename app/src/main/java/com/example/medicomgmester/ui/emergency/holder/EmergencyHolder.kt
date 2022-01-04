@@ -14,7 +14,6 @@ class EmergencyHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.apply {
             name_emergency.text = data_emergency.name_department
             call_emergency.text = data_emergency.contact_number
-            email_emergency.text = data_emergency.line
             image_view_emergency.load(data_emergency.image)
             layout_emergency_bg.setOnClickListener {
                 val intent = Intent(Intent.ACTION_DIAL)

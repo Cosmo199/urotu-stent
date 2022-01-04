@@ -4,9 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".ui.chat.ChatActivity">
-
-    <include layout="@layout/view_action_bar" />
+    tools:context=".ui.chat.ChatFragment">
 
     <LinearLayout
         android:id="@+id/chat_linear"
@@ -21,6 +19,7 @@
             android:layout_height="wrap_content"
             tools:itemCount="30" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -50,5 +49,6 @@
             android:layout_marginTop="3dp"
             android:src="@drawable/send" />
     </LinearLayout>
+
 
 </LinearLayout>

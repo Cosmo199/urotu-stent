@@ -37,10 +37,16 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.medicomgmester.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_chat"
+        android:name="com.example.medicomgmester.ui.chat.ChatFragment"
+        android:label="@string/menu_chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/nav_phone"
+        android:name="com.example.medicomgmester.ui.emergency.PhoneFragment"
+        android:label="@string/menu_phone"
+        tools:layout="@layout/fragment_phone" />
 
 
 </navigation>
