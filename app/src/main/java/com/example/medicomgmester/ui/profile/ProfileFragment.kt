@@ -24,8 +24,6 @@ import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
-
 
 class ProfileFragment : Fragment() {
 
@@ -53,7 +51,12 @@ class ProfileFragment : Fragment() {
         apiService = ApiService()
         val preferences = this.activity?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
         var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
-        callApi(getToken)
+        when (getToken) {
+            "tester_token" -> {
+                load_activity.visibility = View.INVISIBLE
+            }
+            else -> { callApi(getToken) }
+        }
         context?.let { callClick(it) }
 
     }

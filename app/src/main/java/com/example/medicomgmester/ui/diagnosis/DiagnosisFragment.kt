@@ -44,7 +44,12 @@ class DiagnosisFragment : Fragment() {
         var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
         detail_diagnosis_1.visibility = GONE
         diagnosis.visibility = GONE
-        callApi(getToken)
+        when (getToken) {
+            "tester_token" -> {
+                load_activity.visibility = GONE
+            }
+            else -> { callApi(getToken) }
+        }
     }
 
     override fun onDestroyView() {

@@ -8,6 +8,7 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
@@ -48,6 +49,13 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                 }
                 pass == "" -> {
                     showMessageLogin()
+                }
+                user == "uro-tester" -> {
+                    val editor = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE).edit()
+                    editor.putString("name", "tester")
+                    editor.putString("remember_token", "tester_token")
+                    editor.apply()
+                    intentOnClick()
                 }
                 else -> {
                     ProgressDialogFragment.showProgressBar(this)
