@@ -42,5 +42,10 @@
         android:label="@string/menu_phone"
         tools:layout="@layout/fragment_phone" />
 
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.medicomgmester.GuideFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_guide" />
 
 </navigation>

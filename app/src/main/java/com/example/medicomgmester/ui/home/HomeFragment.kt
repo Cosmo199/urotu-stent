@@ -2,6 +2,7 @@ package com.example.medicomgmester.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -92,31 +93,39 @@ class HomeFragment : Fragment() {
     }
 
     private fun setTimeNotificationDefault() {
-        //preferencesTimeHolder
+        /*preferencesTimeHolder*/
         val preferencesTimeHolder = context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
-        var getInsertDate: String? = preferencesTimeHolder?.getString("dateInsert", "noDate")
-        var getInsertTime: String? = preferencesTimeHolder?.getString("timeInsert", "noTime")
-        var getOutDate: String? = preferencesTimeHolder?.getString("dateOut", "noDate")
+        var getTwoDateIn: String? = preferencesTimeHolder?.getString("twoDateIn", "noDate")
+        //var getSevenDateIn: String? = preferencesTimeHolder?.getString("sevenDateIn", "noDate")
+        var getInsertTime: String? = preferencesTimeHolder?.getString("timeIn", "noTime")
+        var getTwoDateOut: String? = preferencesTimeHolder?.getString("twoDateOut", "noDate")
+        //var getSevenDateOut: String? = preferencesTimeHolder?.getString("sevenDateOut", "noDate")
         var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noTime")
 
-        // Check getInsert
-        if (getInsertDate.equals("noDate")) {
+       /*Check getIn*/
+        if (getTwoDateIn.equals("noDate")) {
+
         }  else {
-            var timeInMilliSeconds: Long = 0
+            var timeInMilliSecondsTwoDateIn: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date = sdf.parse(getInsertDate+ getInsertTime)
-            timeInMilliSeconds = date.time
-            context?.let { Utils.setAlarm(it, timeInMilliSeconds) }
+            val twoDateInData = sdf.parse(getTwoDateIn+ getInsertTime)
+            //val sevenDateInData = sdf.parse(getSevenDateIn+ getInsertTime)
+            timeInMilliSecondsTwoDateIn = twoDateInData.time
+            context?.let { Utils.inTwoDayAdvanceNotice(it, timeInMilliSecondsTwoDateIn) }
+           //context?.let { Utils.inSevenDayAdvanceNotice(it, timeInMilliSeconds) }
         }
 
-        //Check getOut
-        if (getOutDate.equals("noDate")) {
+        /*Check getOut*/
+        if (getTwoDateOut.equals("noDate")) {
+
         }  else {
-            var timeInMilliSeconds2: Long = 0
+            var timeInMilliSecondsTwoDateOut: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date2 = sdf.parse(getOutDate+ getOutTime)
-            timeInMilliSeconds2 = date2.time
-            context?.let { Utils.setAlarm2(it, timeInMilliSeconds2 ) }
+            val twoDateOutData = sdf.parse(getTwoDateOut+ getOutTime)
+            //val sevenDateOutData = sdf.parse(getSevenDateOut+ getInsertTime)
+            timeInMilliSecondsTwoDateOut = twoDateOutData.time
+            context?.let { Utils.outTwoDayAdvanceNotice(it, timeInMilliSecondsTwoDateOut ) }
+            //context?.let { Utils.outSevenDayAdvanceNotice(it, timeInMilliSeconds) }
         }
     }
 }

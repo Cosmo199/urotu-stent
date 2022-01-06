@@ -6,11 +6,10 @@ import android.content.Context
 import android.content.Intent
 
 object Utils {
-    fun setAlarm(context: Context, timeOfAlarm: Long) {
+    fun inTwoDayAdvanceNotice(context: Context, timeOfAlarm: Long) {
         // Intent to start the Broadcast Receiver
         val broadcastIntent = Intent(context
-            , NotificationReceiver::class.java)
-
+            , NotificationReceiverOne::class.java)
         val pIntent = PendingIntent.getBroadcast(
             context,
             0,
@@ -28,11 +27,31 @@ object Utils {
         }
     }
 
-    fun setAlarm2(context: Context, timeOfAlarm: Long) {
+    fun inSevenDayAdvanceNotice(context: Context, timeOfAlarm: Long) {
         // Intent to start the Broadcast Receiver
         val broadcastIntent = Intent(context
-            , NotificationReceiver2::class.java)
+            , NotificationReceiverOne::class.java)
+        val pIntent = PendingIntent.getBroadcast(
+            context,
+            0,
+            broadcastIntent,
+            0
+        )
+        // Setting up AlarmManager
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        if (System.currentTimeMillis() < timeOfAlarm) {
+            alarmMgr.set(
+                AlarmManager.RTC_WAKEUP,
+                timeOfAlarm,
+                pIntent
+            )
+        }
+    }
 
+    fun outTwoDayAdvanceNotice(context: Context, timeOfAlarm: Long) {
+        // Intent to start the Broadcast Receiver
+        val broadcastIntent = Intent(context
+            , NotificationReceiverSecond::class.java)
         val pIntent = PendingIntent.getBroadcast(
             context,
             0,
@@ -40,6 +59,27 @@ object Utils {
             0
         )
 
+        // Setting up AlarmManager
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        if (System.currentTimeMillis() < timeOfAlarm) {
+            alarmMgr.set(
+                AlarmManager.RTC_WAKEUP,
+                timeOfAlarm,
+                pIntent
+            )
+        }
+    }
+
+    fun outSevenDayAdvanceNotice(context: Context, timeOfAlarm: Long) {
+        // Intent to start the Broadcast Receiver
+        val broadcastIntent = Intent(context
+            , NotificationReceiverSecond::class.java)
+        val pIntent = PendingIntent.getBroadcast(
+            context,
+            0,
+            broadcastIntent,
+            0
+        )
         // Setting up AlarmManager
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         if (System.currentTimeMillis() < timeOfAlarm) {

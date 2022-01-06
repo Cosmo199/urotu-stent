@@ -20,10 +20,9 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import android.os.Handler
 
 class ChatFragment : Fragment() {
-
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
     private lateinit var apiService: ApiService
@@ -46,8 +45,8 @@ class ChatFragment : Fragment() {
         sendMessage(getToken)
         super.onViewCreated(view, savedInstanceState)
 
-    }
 
+    }
 
     private fun callApi(token: String?) {
         val call = apiService.chatListCall(RememberToken(token))
@@ -62,6 +61,10 @@ class ChatFragment : Fragment() {
                 list_meg?.adapter = fd
                 data?.results?.let { fd.setItem(it) }
                 data?.results?.size?.minus(1)?.let { list_meg.scrollToPosition(it) }
+                val handler = Handler()
+                handler.postDelayed({
+                    autoReload()
+                }, 10000)
             }
         })
     }
@@ -71,17 +74,16 @@ class ChatFragment : Fragment() {
             when (text_input.text.toString()) {
                 "" -> {
                     Toast.makeText(context, "กรุณากรอกข้อความ", Toast.LENGTH_SHORT).show()
-
                 }
                 else -> {
                     val data: String = text_input.text.toString()
-                    callApiSendMessage(token,data)
+                    callApiSendMessage(token, data)
                 }
             }
         }
     }
 
-    private fun callApiSendMessage(token: String?,editMessage: String?){
+    private fun callApiSendMessage(token: String?, editMessage: String?) {
         val call = apiService.sendMessage(SendChat(token, editMessage))
         call.enqueue(object : Callback<ListMessage> {
             override fun onFailure(call: Call<ListMessage>, t: Throwable) {}
@@ -89,25 +91,28 @@ class ChatFragment : Fragment() {
             override fun onResponse(call: Call<ListMessage>, response: Response<ListMessage>) {
                 if (response.isSuccessful) {
                     text_input.setText("")
-                    val preferences = context?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
+                    val preferences =
+                        context?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
                     var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
                     callApi(getToken)
-                    autoReload()
+                    val handler = Handler()
+                    handler.postDelayed({
+                        autoReload()
+                    }, 10000)
                 }
-            } })
+            }
+        })
     }
 
-    private fun autoReload(){
-        object : CountDownTimer(40000, 2000) {
-            override fun onTick(millisUntilFinished: Long) {
-                val preferences = context?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
-                var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
-                callApi(getToken)
-            }
-            override fun onFinish() {
-            }
-        }.start()
+    private fun autoReload() {
+        val preferences = context?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
+        var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
+        callApi(getToken)
+    }
 
+    private fun loop(action: () -> Unit) {
+        while (true)
+            action()
     }
 
     override fun onDestroyView() {

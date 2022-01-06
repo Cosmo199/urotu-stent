@@ -8,7 +8,6 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
@@ -33,6 +32,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         overridePendingTransition(R.anim.trans_right_in, R.anim.trans_right_out);
         apiService = ApiService()
         registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        ProgressDialogFragment.hideProgressBar(this)
         setEvent()
     }
     override fun onResume() {
@@ -40,6 +40,12 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         ConnectivityReceiver.connectivityReceiverListener = this
     }
     private fun setEvent() {
+        val preferences = getSharedPreferences("USERNAME", Context.MODE_PRIVATE)
+        var userPreferences: String? = preferences?.getString("user", "")
+        var passPreferences: String? = preferences?.getString("pass", "")
+        edit_username.setText(userPreferences)
+        edit_password.setText(passPreferences)
+
         btnLogin.setOnClickListener {
             val user: String = edit_username.text.toString()
             val pass: String = edit_password.text.toString()

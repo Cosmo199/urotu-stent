@@ -8,6 +8,7 @@ data class Appointment(
     var detail_appointment: String? = null,
     var date: String? = null,
     var date_alert: String? =null,
+    var seven_date_alert: String? =null,
     var appointment_time: String? = null,
     var name_doctor: String? = null,
     var hn_number: String? = null,
@@ -16,6 +17,7 @@ data class Appointment(
     var email: String? = null,
     var contact_number: String? = null) : Parcelable {
     constructor(source: Parcel) : this(
+        source.readString(),
         source.readString(),
         source.readString(),
         source.readString(),
@@ -36,6 +38,7 @@ data class Appointment(
         writeString(detail_appointment)
         writeString(date)
         writeString(date_alert)
+        writeString(seven_date_alert)
         writeString(appointment_time)
         writeString(name_doctor)
         writeString(hn_number)

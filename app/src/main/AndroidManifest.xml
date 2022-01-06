@@ -59,10 +59,6 @@
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".notification.NotificationActivity"
-            android:screenOrientation="portrait" />
-
         <receiver android:name=".notification.TimeChangedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_SET" />
@@ -75,8 +71,8 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".notification.NotificationReceiver" />
-        <receiver android:name=".notification.NotificationReceiver2" />
+        <receiver android:name=".notification.NotificationReceiverOne" />
+        <receiver android:name=".notification.NotificationReceiverSecond" />
 
         <service
             android:name=".MyFirebaseMessagingService"

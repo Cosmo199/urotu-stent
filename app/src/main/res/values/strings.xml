@@ -36,6 +36,7 @@
     <string name="menu_slideshow" translatable="false">อื่นๆ</string>
     <string name="menu_chat" translatable="false">แชท</string>
     <string name="menu_phone" translatable="false">เบอร์ติดต่อ</string>
+    <string name="menu_logout" translatable="false">ออกจากระบบ</string>
 
     <!-- Detail activity-->
     <string name="doc_detail" translatable="false">Within the field of literary criticism, "text" also refers to the
@@ -69,8 +70,8 @@
     </string>
 
     <!-- Notification Activity-->
-    <string name="setting_description" translatable="false">ระบบจะแจ้งเตือนรายการนัดใส่สาย และ รายการนัดถอดสายล่วงหน้าทุก 2 วัน กรุณากดปุ่ม "ซิงค์ข้อมูล" เพื่อเริ่มการแจ้งเตือน</string>
-    <string name="sync_button" translatable="false">ซิงค์ข้อมูล</string>
+    <string name="setting_description" translatable="false">คุณต้องการกลับไปหน้าเข้าสู่ระบบใหม่อีกครั้ง ?</string>
+    <string name="logout" translatable="false">ออกจากระบบ</string>
 
     <!-- Policy Activity-->
     <string name="policy" translatable="false">\t \tทางคณะผู้จัดทำทราบเป็นอย่างดีว่าท่านให้ความสำคัญกับข้อมูลส่วนบุคคลของท่าน มากเพียงใด และทางคณะผู้จัดทำมีความยินดีเป็นอย่างยิ่งที่ท่านให้ความสนใจในการเข้าร่วมงานวิจัยในครั้งนี้ ทางคณะผู้จัดทำจึงขอเรียนให้ท่านทราบถึงนโยบายคุ้มครองข้อมูลส่วนบุคคล ของผู้ป่วยดังนี้

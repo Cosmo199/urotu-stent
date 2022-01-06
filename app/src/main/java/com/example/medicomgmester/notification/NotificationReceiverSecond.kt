@@ -9,7 +9,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.example.medicomgmester.R
 
-class NotificationReceiver2 : BroadcastReceiver() {
+class NotificationReceiverSecond : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

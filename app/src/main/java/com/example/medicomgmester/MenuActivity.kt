@@ -43,7 +43,8 @@ class MenuActivity : AppCompatActivity() {
                 R.id.nav_gallery,
                 R.id.nav_profile,
                 R.id.nav_chat,
-                R.id.nav_phone
+                R.id.nav_phone,
+                R.id.nav_logout
             ), drawerLayout
         )
 
