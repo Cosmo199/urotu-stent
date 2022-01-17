@@ -1,9 +1,11 @@
 package com.example.medicomgmester.ui.home.holder
 
+import android.content.Intent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicomgmester.model.Appointment
+import com.example.medicomgmester.ui.home.SettingCalendarActivity
 import kotlinx.android.synthetic.main.item_theme_appointment_card.view.*
 
 class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -14,6 +16,13 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
             name_doctor.text = data_appointment.name_doctor
             hn_number.text = "เลขประจำตัวผู้ป่วย :"+" "+data_appointment.hn_number
 
+            btnSetCalendar.setOnClickListener {
+                itemView.context.startActivity(
+                    Intent(itemView.context, SettingCalendarActivity::class.java)
+                        .putExtra(SettingCalendarActivity.Key, data_appointment)
+                )
+            }
+
             /*if check appointment*/
             var textAppointment : String? = data_appointment.name_appointment
             when {
@@ -21,7 +30,7 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
                     val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
                     editor.putString("dateOutNote", data_appointment.date+" ")
                     editor.putString("twoDateOut", data_appointment.date_alert+" ")
-                    //editor.putString("sevenDateOut", data_appointment.seven_date_alert+" ")
+                    editor.putString("sevenDateOut", data_appointment.seven_date_alert+" ")
                     editor.putString("timeOut", data_appointment.appointment_time)
                     editor.apply()
                 }
@@ -29,13 +38,15 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
                     val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
                     editor.putString("dateIntNote", data_appointment.date+" ")
                     editor.putString("twoDateIn", data_appointment.date_alert+" ")
-                    //editor.putString("sevenDateIn", data_appointment.seven_date_alert+" ")
+                    editor.putString("sevenDateIn", data_appointment.seven_date_alert+" ")
                     editor.putString("timeIn", data_appointment.appointment_time)
                     editor.apply()
                 }
                 else -> {
                 }
             }
+
+
 
         }
     }

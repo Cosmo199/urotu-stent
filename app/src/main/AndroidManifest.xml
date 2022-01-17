@@ -23,32 +23,36 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <!-- Splash activity -->
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"> <!-- SplashActivity activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.article.DetailArticleActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PolicyActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" />  <!-- PolicyActivity activity -->
 
         <receiver
             android:name=".ConnectivityReceiver"
-            android:enabled="true">
+            android:enabled="true"> <!-- Login activity -->
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-        </receiver> <!-- Login activity -->
+        </receiver>
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" /> <!-- Emergency activity -->
+
+        <activity android:name=".ui.home.SettingCalendarActivity"
+            android:screenOrientation="portrait" /> <!-- SettingCalendar activity -->
+
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" /> <!-- Medic activity -->
@@ -59,6 +63,7 @@
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <receiver android:name=".notification.TimeChangedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_SET" />
@@ -81,7 +86,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

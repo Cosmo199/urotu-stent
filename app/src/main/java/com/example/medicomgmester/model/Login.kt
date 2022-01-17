@@ -1,5 +1,4 @@
 package com.example.medicomgmester.model
-
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -13,18 +12,16 @@ data class ResLogin(
     var id: String? = null,
     var message: String? = null,
     var remember_token: String? = null,
-    var name: String? = null
+    var name: String? = null,
 ) : Parcelable {
     constructor(source: Parcel) : this(
         source.readString(),
         source.readString(),
         source.readString(),
         source.readString()
-
     )
 
     override fun describeContents() = 0
-
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(id)
         writeString(name)
@@ -40,7 +37,5 @@ data class ResLogin(
         }
     }
 }
-
-
 data class ListLogin(@SerializedName("data") var results: List<ResLogin>? = null)
 

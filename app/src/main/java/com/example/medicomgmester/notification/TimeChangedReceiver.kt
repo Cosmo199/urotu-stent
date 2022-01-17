@@ -9,12 +9,14 @@ class TimeChangedReceiver : BroadcastReceiver() {
         if (intent?.action == "android.intent.action.TIME_SET") {
             /*ideally we should be fetching the data from a database*/
             val sharedPref = context?.getSharedPreferences("MyPref",Context.MODE_PRIVATE) ?: return
-            val timeInMilli = sharedPref.getLong("timeInMilli", 1)
-            val timeInMilli2 = sharedPref.getLong("timeInMilli2", 1)
-            Utils.inTwoDayAdvanceNotice(context, timeInMilli)
-            //Utils.inSevenDayAdvanceNotice(context, timeInMilli)
-            Utils.outTwoDayAdvanceNotice(context, timeInMilli2)
-            //Utils.outSevenDayAdvanceNotice(context, timeInMilli2)
+            val timeInMilliInTwoDay = sharedPref.getLong("timeInMilliInTwoDay", 1)
+            val timeInMilliInSevenDay = sharedPref.getLong("timeInMilliInSevenDay", 1)
+            val timeInMilliOutTwoDay = sharedPref.getLong("timeInMilliOutTwoDay", 1)
+            val timeInMilliOutSevenDay = sharedPref.getLong("timeInMilliOutSevenDay", 1)
+            Utils.inTwoDayAdvanceNotice(context, timeInMilliInTwoDay)
+            Utils.inSevenDayAdvanceNotice(context, timeInMilliInSevenDay)
+            Utils.outTwoDayAdvanceNotice(context, timeInMilliOutTwoDay)
+            Utils.outSevenDayAdvanceNotice(context, timeInMilliOutSevenDay)
         }
     }
 }

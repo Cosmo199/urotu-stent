@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- _________globals____________ -->
-    <string name="app_name">UrotuStent</string>
+    <string name="app_name">Urotu Stent</string>
     <string name="app_name_note" translatable="false">รายการแจ้งเตือนนัดหมาย</string>
     <string name="undo">Undo</string>
     <string name="yes">Yes</string>
@@ -68,10 +68,12 @@
             4.รู้สึกปัสสาวะไม่สุด
             5.มีอาการปวดท้องน้อย
     </string>
-
-    <!-- Notification Activity-->
-    <string name="setting_description" translatable="false">คุณต้องการกลับไปหน้าเข้าสู่ระบบใหม่อีกครั้ง ?</string>
+    <!-- Guide Fragment -->
+    <string name="logout_description" translatable="false">คุณต้องการกลับไปหน้าเข้าสู่ระบบใหม่อีกครั้ง ?</string>
     <string name="logout" translatable="false">ออกจากระบบ</string>
+
+    <!-- Setting Activity-->
+    <string name="setting_description" translatable="false">ระบบจะแจ้งเตือนรายการนัดหมายตามที่ท่านได้ตั้งค่าในปฎิทิน</string>
 
     <!-- Policy Activity-->
     <string name="policy" translatable="false">\t \tทางคณะผู้จัดทำทราบเป็นอย่างดีว่าท่านให้ความสำคัญกับข้อมูลส่วนบุคคลของท่าน มากเพียงใด และทางคณะผู้จัดทำมีความยินดีเป็นอย่างยิ่งที่ท่านให้ความสนใจในการเข้าร่วมงานวิจัยในครั้งนี้ ทางคณะผู้จัดทำจึงขอเรียนให้ท่านทราบถึงนโยบายคุ้มครองข้อมูลส่วนบุคคล ของผู้ป่วยดังนี้

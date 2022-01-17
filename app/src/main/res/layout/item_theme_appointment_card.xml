@@ -37,7 +37,6 @@
             android:textSize="15dp"
             tools:text="นัดใส่สายสวนในท่อไต" />
 
-
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -153,8 +152,18 @@
             android:layout_marginLeft="83dp"
             android:layout_marginTop="10dp"
             android:textSize="15dp"
-            android:text="02-926-9784-5
-" />
+            android:text="02-926-9784-5" />
+
+        <Button
+            android:layout_below="@id/contact_number"
+            android:id="@+id/btnSetCalendar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/side_button"
+            android:text="เพิ่มลงในปฎิทินเครื่อง"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

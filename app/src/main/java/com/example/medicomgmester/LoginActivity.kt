@@ -8,6 +8,7 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
@@ -103,7 +104,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         val call = apiService.login(Login(editUsername, editPassword))
         call.enqueue(object : Callback<ListLogin> {
             override fun onFailure(call: Call<ListLogin>, t: Throwable) {
-                showMessageLogin()
+                showMessageLoginErrorApi(t.toString())
             }
             override fun onResponse(call: Call<ListLogin>, response: Response<ListLogin>) {
                 if (response.isSuccessful) {
@@ -118,7 +119,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                 }
             }
         })
-
     }
 
     private fun intentOnClick() {
@@ -132,6 +132,17 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             .title("เข้าสู่ระบบไม่สำเร็จ")
             .position(AwesomeDialog.POSITIONS.CENTER)
             .body("ชื่อผู้ใช้ กับ รหัสผ่านไม่ถูกต้อง")
+            .onNegative(
+                "ปิด",
+                buttonBackgroundColor = R.drawable.side_button,
+            ) {}
+    }
+    private fun showMessageLoginErrorApi(toString: String,) {
+        ProgressDialogFragment.hideProgressBar(this)
+        AwesomeDialog.build(this)
+            .title("เข้าสู่ระบบไม่สำเร็จ")
+            .position(AwesomeDialog.POSITIONS.CENTER)
+            .body("ข้อความจาก app $toString")
             .onNegative(
                 "ปิด",
                 buttonBackgroundColor = R.drawable.side_button,

@@ -72,7 +72,6 @@ class ProfileFragment : Fragment() {
             override fun onFailure(call: Call<ListProfile>, t: Throwable) {
                 intentOnClick()
             }
-
             override fun onResponse(call: Call<ListProfile>, response: Response<ListProfile>) {
                 val list = response.body()
                 username_profile.text = "ชื่อ ID: " + list?.results?.get(0)?.username

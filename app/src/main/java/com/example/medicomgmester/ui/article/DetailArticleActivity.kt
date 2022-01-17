@@ -10,8 +10,6 @@ import com.example.medicomgmester.model.Article
 import com.example.medicomgmester.ui.chat.ChatActivity
 import kotlinx.android.synthetic.main.activity_detail_article.*
 import kotlinx.android.synthetic.main.activity_detail_article_sub.*
-import kotlinx.android.synthetic.main.fragment_gallery.*
-import kotlinx.android.synthetic.main.fragment_gallery.fab
 import kotlinx.android.synthetic.main.view_action_bar.*
 
 class DetailArticleActivity : AppCompatActivity() {

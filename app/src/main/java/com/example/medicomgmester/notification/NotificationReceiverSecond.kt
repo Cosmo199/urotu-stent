@@ -26,7 +26,7 @@ class NotificationReceiverSecond : BroadcastReceiver() {
 
         val preferencesTimeHolder =
             context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
-        var getOutDate: String? = preferencesTimeHolder?.getString("dateIntNote", "noDate")
+        var getOutDate: String? = preferencesTimeHolder?.getString("dateOutNote", "noDate")
         var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noDate")
 
         // Create the notification to be shown

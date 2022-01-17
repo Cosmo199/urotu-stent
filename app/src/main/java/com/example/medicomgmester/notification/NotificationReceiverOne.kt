@@ -27,7 +27,7 @@ class NotificationReceiverOne : BroadcastReceiver() {
         val preferencesTimeHolder =
             context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
         var getInsertDate: String? = preferencesTimeHolder?.getString("dateIntNote", "noDate")
-        var getInsertTime: String? = preferencesTimeHolder?.getString("timeInsert", "noDate")
+        var getInsertTime: String? = preferencesTimeHolder?.getString("timeIn", "noDate")
 
         // Create the notification to be shown
         val mBuilder = NotificationCompat.Builder(context!!, "AlarmId")

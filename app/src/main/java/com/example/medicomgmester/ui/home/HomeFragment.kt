@@ -2,11 +2,9 @@ package com.example.medicomgmester.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicomgmester.LoginActivity
@@ -16,7 +14,6 @@ import com.example.medicomgmester.model.RememberToken
 import com.example.medicomgmester.network.ApiService
 import com.example.medicomgmester.notification.Utils
 import com.example.medicomgmester.ui.home.adapter.AdapterListHome
-import com.tommasoberlose.progressdialog.ProgressDialogFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
@@ -82,7 +79,6 @@ class HomeFragment : Fragment() {
                     data?.results?.let { fd.setItem(it) }
                     setTimeNotificationDefault()
                 }
-
             }
         })
     }
@@ -96,36 +92,40 @@ class HomeFragment : Fragment() {
         /*preferencesTimeHolder*/
         val preferencesTimeHolder = context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
         var getTwoDateIn: String? = preferencesTimeHolder?.getString("twoDateIn", "noDate")
-        //var getSevenDateIn: String? = preferencesTimeHolder?.getString("sevenDateIn", "noDate")
+        var getSevenDateIn: String? = preferencesTimeHolder?.getString("sevenDateIn", "noDate")
         var getInsertTime: String? = preferencesTimeHolder?.getString("timeIn", "noTime")
         var getTwoDateOut: String? = preferencesTimeHolder?.getString("twoDateOut", "noDate")
-        //var getSevenDateOut: String? = preferencesTimeHolder?.getString("sevenDateOut", "noDate")
+        var getSevenDateOut: String? = preferencesTimeHolder?.getString("sevenDateOut", "noDate")
         var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noTime")
 
-       /*Check getIn*/
+       /*Check NotificationIn*/
         if (getTwoDateIn.equals("noDate")) {
 
         }  else {
             var timeInMilliSecondsTwoDateIn: Long = 0
+            var timeInMilliSecondsSevenDateIn: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
             val twoDateInData = sdf.parse(getTwoDateIn+ getInsertTime)
-            //val sevenDateInData = sdf.parse(getSevenDateIn+ getInsertTime)
+            val sevenDateInData = sdf.parse(getSevenDateIn+ getInsertTime)
             timeInMilliSecondsTwoDateIn = twoDateInData.time
+            timeInMilliSecondsSevenDateIn = sevenDateInData.time
             context?.let { Utils.inTwoDayAdvanceNotice(it, timeInMilliSecondsTwoDateIn) }
-           //context?.let { Utils.inSevenDayAdvanceNotice(it, timeInMilliSeconds) }
+            context?.let { Utils.inSevenDayAdvanceNotice(it, timeInMilliSecondsSevenDateIn) }
         }
 
-        /*Check getOut*/
+        /*Check NotificationOut*/
         if (getTwoDateOut.equals("noDate")) {
 
         }  else {
             var timeInMilliSecondsTwoDateOut: Long = 0
+            var timeInMilliSecondsSevenDateOut: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
             val twoDateOutData = sdf.parse(getTwoDateOut+ getOutTime)
-            //val sevenDateOutData = sdf.parse(getSevenDateOut+ getInsertTime)
+            val sevenDateOutData = sdf.parse(getSevenDateOut+ getOutTime)
             timeInMilliSecondsTwoDateOut = twoDateOutData.time
+            timeInMilliSecondsSevenDateOut = sevenDateOutData.time
             context?.let { Utils.outTwoDayAdvanceNotice(it, timeInMilliSecondsTwoDateOut ) }
-            //context?.let { Utils.outSevenDayAdvanceNotice(it, timeInMilliSeconds) }
+            context?.let { Utils.outSevenDayAdvanceNotice(it, timeInMilliSecondsSevenDateOut) }
         }
     }
 }
