@@ -79,6 +79,11 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             val intent = Intent(this, PolicyActivity::class.java)
             startActivity(intent)
         }
+        text_forget.setOnClickListener {
+            val intent = Intent(this, ForgetPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
@@ -104,7 +109,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         val call = apiService.login(Login(editUsername, editPassword))
         call.enqueue(object : Callback<ListLogin> {
             override fun onFailure(call: Call<ListLogin>, t: Throwable) {
-                showMessageLoginErrorApi(t.toString())
+                showMessageLogin()
             }
             override fun onResponse(call: Call<ListLogin>, response: Response<ListLogin>) {
                 if (response.isSuccessful) {

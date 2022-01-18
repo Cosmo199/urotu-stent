@@ -83,5 +83,9 @@
     <!-- Chat Activity-->
     <string name="start_typing">ข้อความ</string>
 
+    <!-- Chat Fragment-->
+    <string name="txt_head" translatable="false">คุณต้องการเปิดแชท LINE คุยกับหมอ ?</string>
+    <string name="line_txt">กดเปิดแชท Line</string>
+
 
 </resources>

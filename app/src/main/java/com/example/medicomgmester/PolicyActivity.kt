@@ -9,7 +9,6 @@ class PolicyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_policy)
-
         text_bar.text = "นโยบายความเป็นส่วนตัว"
         arrow_back.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)

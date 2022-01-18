@@ -108,8 +108,7 @@ class ProfileFragment : Fragment() {
         val call = apiService.profileUpdate(UpdateProfile(token, emailProfile, telProfile))
         call.enqueue(object : Callback<ListProfileUpdate> {
             override fun onFailure(call: Call<ListProfileUpdate>, t: Throwable) {
-                //intentOnClick()
-                Log.d("error", "-------> $t")
+
             }
 
             override fun onResponse(call: Call<ListProfileUpdate>, response: Response<ListProfileUpdate>) {

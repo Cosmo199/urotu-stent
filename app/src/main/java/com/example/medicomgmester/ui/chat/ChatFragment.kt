@@ -1,15 +1,15 @@
 package com.example.medicomgmester.ui.chat
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.medicomgmester.databinding.FragmentChatBinding
 import com.example.medicomgmester.model.ListChat
 import com.example.medicomgmester.model.ListMessage
 import com.example.medicomgmester.model.RememberToken
@@ -21,31 +21,36 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.os.Handler
+import com.example.medicomgmester.databinding.FragmentChatLineBinding
+import kotlinx.android.synthetic.main.fragment_chat_line.*
 
 class ChatFragment : Fragment() {
-    private var _binding: FragmentChatBinding? = null
+    private var _binding: FragmentChatLineBinding? = null
     private val binding get() = _binding!!
     private lateinit var apiService: ApiService
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentChatBinding.inflate(inflater, container, false)
+        _binding = FragmentChatLineBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+       /*
         apiService = ApiService()
         val preferences = context?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
         var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
         callApi(getToken)
         sendMessage(getToken)
+        */
+        btnLine.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://lin.ee/nfWq5Kn"))
+            startActivity(browserIntent)
+        }
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
     private fun callApi(token: String?) {
@@ -68,7 +73,6 @@ class ChatFragment : Fragment() {
             }
         })
     }
-
     private fun sendMessage(token: String?) {
         btnSend.setOnClickListener {
             when (text_input.text.toString()) {

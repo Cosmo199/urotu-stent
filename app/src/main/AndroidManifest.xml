@@ -22,7 +22,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"> <!-- SplashActivity activity -->
@@ -37,8 +36,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PolicyActivity"
-            android:screenOrientation="portrait" />  <!-- PolicyActivity activity -->
-
+            android:screenOrientation="portrait" /> <!-- PolicyActivity activity -->
         <receiver
             android:name=".ConnectivityReceiver"
             android:enabled="true"> <!-- Login activity -->
@@ -46,13 +44,16 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" /> <!-- Emergency activity -->
-
-        <activity android:name=".ui.home.SettingCalendarActivity"
+            android:screenOrientation="portrait" /> <!-- Login activity -->
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:screenOrientation="portrait" /> <!-- ForgetPassword activity -->
+        <activity
+            android:name=".ui.home.SettingCalendarActivity"
             android:screenOrientation="portrait" /> <!-- SettingCalendar activity -->
-
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" /> <!-- Medic activity -->

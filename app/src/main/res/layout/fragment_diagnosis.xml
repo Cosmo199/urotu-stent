@@ -60,6 +60,10 @@
                 android:textSize="17sp"
                 tools:text="ตำแหน่งสาย" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
         </LinearLayout>
 
     </RelativeLayout>

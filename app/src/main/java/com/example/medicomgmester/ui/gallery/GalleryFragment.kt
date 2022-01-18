@@ -1,18 +1,16 @@
 package com.example.medicomgmester.ui.gallery
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ScrollView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.medicomgmester.JsonMockUtility
-import com.example.medicomgmester.MenuActivity
 import com.example.medicomgmester.databinding.FragmentGalleryBinding
 import com.example.medicomgmester.model.ListLesson
-import com.example.medicomgmester.ui.chat.ChatActivity
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery_detail.*
 
@@ -59,9 +57,12 @@ class GalleryFragment : Fragment() {
 
     private fun fabOnclick(){
         fab.setOnClickListener {
-           // scrollView.fullScroll(ScrollView.FOCUS_UP);
+            /*
             val intent = Intent(activity, ChatActivity::class.java)
             activity?.startActivity(intent)
+             */
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://lin.ee/nfWq5Kn"))
+            startActivity(browserIntent)
         }
     }
 

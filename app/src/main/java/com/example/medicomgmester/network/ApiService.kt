@@ -14,6 +14,10 @@ interface ApiService {
     fun login(@Body login: Login): Call<ListLogin>
 
     @Headers("Content-Type: application/json")
+    @POST("ForGetPassword")
+    fun forgetPassword(@Body forgetPassword: ForgetPassword): Call<ListForgetPassword>
+
+    @Headers("Content-Type: application/json")
     @POST("updateProfile")
     fun profileUpdate(@Body updateProfile: UpdateProfile): Call<ListProfileUpdate>
 
@@ -40,7 +44,6 @@ interface ApiService {
     @Headers("Content-Type: application/json")
     @POST("profile")
     fun profileCall(@Body remember_token: RememberToken): Call<ListProfile>
-
 
     companion object{
         operator fun invoke(): ApiService {
